@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class AimAndShoot : MonoBehaviour
 {
+    float horizontalInput;
+    float rotateSpeed = 35;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +15,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Closes the game when esc is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.forward * -horizontalInput * Time.deltaTime * rotateSpeed);
     }
 }
