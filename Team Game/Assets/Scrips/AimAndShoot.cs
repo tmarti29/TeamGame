@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimAndShoot : MonoBehaviour
 {
     float horizontalInput;
-    float rotateSpeed = 35;
+    float rotateSpeed = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,6 @@ public class AimAndShoot : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.right * -horizontalInput * Time.deltaTime * rotateSpeed);
+        transform.Rotate(new Vector3(1,0,0) * -horizontalInput * Time.deltaTime * rotateSpeed);
     }
 }
