@@ -25,14 +25,14 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.C))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
         }
     }
     void MoveLeft()
     {
         if (Input.GetKey(KeyCode.X))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
     }
 

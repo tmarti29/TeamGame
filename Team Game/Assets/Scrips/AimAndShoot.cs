@@ -16,6 +16,6 @@ public class AimAndShoot : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.forward * -horizontalInput * Time.deltaTime * rotateSpeed);
+        transform.Rotate(Vector3.right * -horizontalInput * Time.deltaTime * rotateSpeed);
     }
 }
