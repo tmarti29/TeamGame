@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TimerCountUp());
         spawnCoroutine = StartCoroutine(SpawnBalls());
     }
-
+ 
     IEnumerator SpawnBalls()
     {
         while (isGameActive)
