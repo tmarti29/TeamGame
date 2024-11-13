@@ -30,8 +30,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
-            FindObjectOfType<GameManager>().UpdateLives(-1);
         }
     }
-
 }

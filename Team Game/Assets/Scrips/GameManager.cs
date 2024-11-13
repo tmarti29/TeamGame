@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        //titleScreen.SetActive(false);
-        //gameOverText.gameObject.SetActive(false);
-        //restartButton.gameObject.SetActive(false);
+        titleScreen.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
         isGameActive = true;
         lives = 3;
         timer = 0.0f; 
