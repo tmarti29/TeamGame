@@ -478,11 +478,11 @@ Transform:
   m_GameObject: {fileID: 333385684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -533.5, y: -211.22, z: 0}
+  m_LocalPosition: {x: -84.5, y: -7.720001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 795068241}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &333385686
 MonoBehaviour:
@@ -496,9 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9b0b0f1c56f2c488b74efe8ae5a66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Balls: []
+  Balls: {fileID: 4639662987739970886, guid: 0b4daf942e3e5554192e95829a6d4b61, type: 3}
   isGameActive: 0
-  ranX: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +823,6 @@ RectTransform:
   - {fileID: 188034356}
   - {fileID: 761368612}
   - {fileID: 1474219848}
-  - {fileID: 333385685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1913,3 +1911,4 @@ SceneRoots:
   - {fileID: 795068241}
   - {fileID: 228944617}
   - {fileID: 543450652471219969}
+  - {fileID: 333385685}
