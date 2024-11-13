@@ -16,19 +16,25 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
     private Coroutine spawnCoroutine;
+    
     private int lives = 3;
-    private float timer = 0.0f; 
+    private float timer = 0.0f;
 
+    private void Start()
+    {
+        StartGame();
+    }
     public void StartGame()
     {
-        titleScreen.SetActive(false);
-        gameOverText.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
+        //titleScreen.SetActive(false);
+        //gameOverText.gameObject.SetActive(false);
+        //restartButton.gameObject.SetActive(false);
+        isGameActive = true;
         lives = 3;
         timer = 0.0f; 
         UpdateLives(0);
         UpdateTimer();
-        StartCoroutine(TimerCountUp()); 
+        StartCoroutine(TimerCountUp());
         spawnCoroutine = StartCoroutine(SpawnBalls());
     }
 
@@ -38,7 +44,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnRate);
             float ranX = Random.Range(-10f, 10f);
-            Vector3 spawnPos = new Vector3(ranX, 10, 0);
+            Vector3 spawnPos = new Vector3(ranX, 10, -0.5f);
             Instantiate(Balls, spawnPos, Quaternion.AngleAxis(0, Vector3.forward));
         }
     }
