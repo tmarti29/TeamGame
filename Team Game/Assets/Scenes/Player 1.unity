@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807eba35155732846ba7ae0a4c71b373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3167100285450263928, guid: 11dfb991d012fe646b2da72b180b1beb, type: 3}
+  projectilePrefab: {fileID: 5095738865401441185, guid: 7a9b621a2e7618a40a01ac7ec46bd0c3, type: 3}
   projectileSpawnPoint: {fileID: 1792723760}
   armTransform: {fileID: 5998637910820438573}
   rotateSpeed: 100

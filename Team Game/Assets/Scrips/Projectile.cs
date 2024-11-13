@@ -15,7 +15,6 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-       
         Vector3 movement = transform.up * speed * Time.deltaTime;
         transform.position += movement;
 
@@ -25,12 +24,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        
-        if (collision.gameObject.CompareTag("Ball"))
+        if (other.CompareTag("Balls"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
