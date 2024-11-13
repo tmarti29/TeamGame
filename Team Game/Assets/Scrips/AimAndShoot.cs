@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class AimAndShoot : MonoBehaviour
 {
-    float horizontalInput;
-    float rotateSpeed = 100;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
+    public Transform armTransform; 
+    public float rotateSpeed = 100f; 
 
-    // Update is called once per frame
     void Update()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(new Vector3(1,0,0) * -horizontalInput * Time.deltaTime * rotateSpeed);
+    {   
+        float horizontalInput = Input.GetAxis("Horizontal");
+        armTransform.RotateAround(transform.position, Vector3.forward, horizontalInput * rotateSpeed * Time.deltaTime);
+      
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            projectile.transform.rotation = armTransform.rotation; 
+        }
     }
 }
