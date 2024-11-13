@@ -498,6 +498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Balls: {fileID: 4639662987739970886, guid: 0b4daf942e3e5554192e95829a6d4b61, type: 3}
   isGameActive: 0
+  gameOverText: {fileID: 0}
+  livesText: {fileID: 761368613}
+  timerText: {fileID: 1474219849}
+  restartButton: {fileID: 0}
+  titleScreen: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

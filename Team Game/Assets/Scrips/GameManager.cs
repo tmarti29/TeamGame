@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     public GameObject Balls;
     private float spawnRate = 2.0f;
     public bool isGameActive;
-    private int score;
-    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI timerText;
@@ -19,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject titleScreen;
     private Coroutine spawnCoroutine;
     private int lives = 3;
-    private float timer = 60.0f;
+    private float timer = 0.0f; 
 
     public void StartGame()
     {
@@ -27,10 +25,10 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         lives = 3;
-        timer = 60.0f;
+        timer = 0.0f; 
         UpdateLives(0);
         UpdateTimer();
-        StartCoroutine(CountdownTimer());
+        StartCoroutine(TimerCountUp()); 
         spawnCoroutine = StartCoroutine(SpawnBalls());
     }
 
@@ -43,12 +41,6 @@ public class GameManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(ranX, 10, 0);
             Instantiate(Balls, spawnPos, Quaternion.AngleAxis(0, Vector3.forward));
         }
-    }
-
-    public void UpdateScore(int scoreToAdd)
-    {
-        score += scoreToAdd;
-        scoreText.text = "Score: " + score;
     }
 
     public void UpdateLives(int livesToChange)
@@ -66,21 +58,16 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTimer()
     {
-        timerText.text = "Time: " + Mathf.FloorToInt(timer).ToString();
+        timerText.text = "Time: " + Mathf.FloorToInt(timer).ToString(); 
     }
 
-    IEnumerator CountdownTimer()
+    IEnumerator TimerCountUp()
     {
-        while (isGameActive && timer > 0)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(1f);
-            timer -= 1f;
+            timer += 1f; 
             UpdateTimer();
-        }
-
-        if (timer <= 0)
-        {
-            GameOver();
         }
     }
 
