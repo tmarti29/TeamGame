@@ -234,6 +234,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8828307087798737873, guid: c94fc9adaa092b140b5e5967b951ebdc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05708404
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828307087798737873, guid: c94fc9adaa092b140b5e5967b951ebdc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.001957699
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1310,7 +1318,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994422347}
-  - component: {fileID: 1994422348}
   m_Layer: 0
   m_Name: projectileSpawnPoint
   m_TagString: Untagged
@@ -1333,22 +1340,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5998637910820438573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1994422348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994422346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807eba35155732846ba7ae0a4c71b373, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3167100285450263928, guid: 11dfb991d012fe646b2da72b180b1beb, type: 3}
-  projectileSpawnPoint: {fileID: 1994422347}
-  armTransform: {fileID: 0}
-  rotateSpeed: 100
 --- !u!4 &543450652471219969
 Transform:
   m_ObjectHideFlags: 0
