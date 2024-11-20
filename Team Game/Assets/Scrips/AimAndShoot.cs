@@ -12,12 +12,17 @@ public class AimAndShoot : MonoBehaviour
     void Update()
     {   
         float horizontalInput = Input.GetAxis("Horizontal");
-        armTransform.RotateAround(transform.position, Vector3.forward, horizontalInput * rotateSpeed * Time.deltaTime);
+        armTransform.RotateAround(transform.position, Vector3.forward, -horizontalInput * rotateSpeed * Time.deltaTime);
       
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             projectile.transform.rotation = armTransform.rotation; 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            projectile.transform.rotation = armTransform.rotation;
         }
     }
 }

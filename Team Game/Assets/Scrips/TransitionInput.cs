@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Balls : MonoBehaviour
+public class TransitionInput : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,9 @@ public class Balls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Z))
+        {
+            SceneManager.LoadScene("Player 1");
+        }
     }
 }

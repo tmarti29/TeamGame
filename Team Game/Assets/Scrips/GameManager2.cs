@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager2 : MonoBehaviour
 {
     public GameObject Balls;
     private float spawnRate = 2.0f;
@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
     private Coroutine spawnCoroutine;
-    public static float player1Time;
+    public static float player2Time;
     private int lives = 3;
-    public float timer = 0.0f;
+    public float timer2 = 0.0f;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         restartButton.gameObject.SetActive(false);
         isGameActive = true;
         lives = 3;
-        timer = 0.0f; 
+        timer2 = 0.0f; 
         UpdateLives(0);
         UpdateTimer();
         StartCoroutine(TimerCountUp());
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTimer()
     {
-        timerText.text = "Time: " + Mathf.FloorToInt(timer).ToString(); 
+        timerText.text = "Time: " + Mathf.FloorToInt(timer2).ToString(); 
     }
 
     IEnumerator TimerCountUp()
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         while (isGameActive)
         {
             yield return new WaitForSeconds(1f);
-            timer += 1f; 
+            timer2 += 1f; 
             UpdateTimer();
         }
     }
@@ -81,18 +81,17 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         StopCoroutine(spawnCoroutine);
-        player1Time = timer;
+        player2Time = timer2;
         RestartGame();
     }
 
+    public int GetTime2()
+    {
+        return Mathf.FloorToInt(player2Time);
+    }
     public void RestartGame()
     {
-        SceneManager.LoadScene("Transition2");
-    }
-
-    public int GetTime()
-    {
-        return Mathf.FloorToInt(player1Time);
+        SceneManager.LoadScene("End");
     }
 
     void Update()
